@@ -41,7 +41,7 @@ class PagesController extends Controller
          $title = 'Welcome Admin';
          return view('AdminOnly.addpage')->with('title',$title); 
      }
-
+///sample
     //This function login is responsible in redirecting to the Login Page
     public function login()
     {
