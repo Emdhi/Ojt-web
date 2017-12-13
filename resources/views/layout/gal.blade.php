@@ -7,19 +7,25 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="<?php echo asset('css/materialize.min.css')?>" type="text/css">
+        
         {{--  Custom CSS designed especially for Home Layout  --}}
         <link rel="stylesheet" href="<?php echo asset('css/customhome/home.css')?>" type="text/css">
+        
         {{--  Custom CSS for Loading  --}}
         <link rel="stylesheet" href="<?php echo asset('css/loader.css')?>" type="text/css"> 
+        
         {{--  FONT of the Website  --}}
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
         {{--  Font Awesome for Icons  --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      
+        
         <title>{{config('app.name','PBO Global')}}</title>
     </head>
     <body>
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        
         <!--JavaScript at end of body for optimized loading-->
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript" src="<?php echo asset('js/customgal.js')?>"></script>
@@ -28,11 +34,12 @@
             // API Key for Google Map :)
         </script>
 
-        {{--  This is the loading animation  --}}
-        <div id="load">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
+        {{--  Loading animation  --}}
+            <div id="load">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        {{-- End of Loading animation  --}}
 
         <div id="contents">{{-- This div is for wrapping up the whole content for loading screen   --}}
             <div class="fixed-action-btn">
@@ -42,25 +49,27 @@
             </div>
 
             <!-- Tap Target Structure -->
-            <div style="z-index: -1;" class="tap-target indigo lighten-4" data-activates="upbutton">
-                <div class="tap-target-content">
-                <h5>Toggle Me</h5>
-                <p>If you want to auto scroll up </p>
+                <div style="z-index: -1;" class="tap-target indigo lighten-4" data-activates="upbutton">
+                    <div class="tap-target-content">
+                    <h5>Toggle Me</h5>
+                    <p>If you want to auto scroll up </p>
+                    </div>
                 </div>
-            </div>
+            <!-- End of Tap Target Structure -->
 
             <div id="fadeeffect" class="preload">
-
+                {{--  Gallery first image displayed  --}}
                     <div class="parallax-container hide-on-small-only">
                         <div class="parallax">
                             <h3 id="scroll">Gallery</h3>
                             <img style="z-index: -1;" src=<?php echo asset("img/Pbo1.jpg")?>>
                         </div>
                     </div>
+                {{-- End of Gallery first image displayed  --}}
 
                     <div class="section white">
                         <div class="row container">
-                            @yield('content')
+                            @yield('content') <!-- Content of Gallery -->
                         </div>
                     </div>
 
@@ -70,18 +79,19 @@
                     </div>
 
                     <!-- Footer -->
-                    <footer class="page-footer">
-                        <div class="footer-copyright">
-                            <div class="container">
-                                <center>
-                                    <p>PBO Global © 2017 All Rights Reserved</p>
-                                    <a href="#" class="fa fa-facebook  tooltipped" data-position="top" data-delay="50" data-tooltip="Facebook"></a>
-                                    <a href="#" class="fa fa-twitter  tooltipped" data-position="top" data-delay="50" data-tooltip="Twitter"></a>
-                                    <a href="#" class="fa fa-linkedin  tooltipped" data-position="top" data-delay="50" data-tooltip="LinkedIn"></a>
-                                </center> 
-                            </div>
-                        </div>       
-                    </footer>
+                        <footer class="page-footer">
+                            <div class="footer-copyright">
+                                <div class="container">
+                                    <center>
+                                        <p>PBO Global © 2017 All Rights Reserved</p>
+                                        <a href="#" class="fa fa-facebook  tooltipped" data-position="top" data-delay="50" data-tooltip="Facebook"></a>
+                                        <a href="#" class="fa fa-twitter  tooltipped" data-position="top" data-delay="50" data-tooltip="Twitter"></a>
+                                        <a href="#" class="fa fa-linkedin  tooltipped" data-position="top" data-delay="50" data-tooltip="LinkedIn"></a>
+                                    </center> 
+                                </div>
+                            </div>       
+                        </footer>
+                    <!-- End of Footer -->
             </div>
         </div>
     </body>
